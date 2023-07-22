@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+    <link rel="stylesheet" href="custom.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <section ><h3 class="inp">
+            Please enter values
+        </h3></section>
+        <input type="text" id="int" placeholder="Enter the number with comma">
+        <button onclick="get()">run</button>
+        <br>
+        <section class="data-container"></section>
+	<section id="ele"></section>
+	<div style="margin: auto; width: fit-content">
+
+
+		<button class="btn2" onclick="CombSort(),disable()" id="Button2">
+			Gnome Sort
+		</button>
+
+		
+		
+		
+		
+	</div>
+
+
+    </div>
+    
+<script>
+    var arr= [];
+    var j=0;
+    var list;
+function get(){
+    var str = document.getElementById("int").value;
+    str = str +",";
+    console.log(str);
+
+    str = str.trim().split(",");
+    str = str.filter((item)=> item!="");
+    list = str.map(Number);
+    console.log(list);
+    generatebars(list);
+    
+}
+    const container = document.querySelector(".data-container");
+    function generatebars(list) {
+  
+  
+  for (let i = 0; i < list.length; i += 1) {
+    
+    
+    const bar = document.createElement("div");
+  
+    // To add class "bar" to "div"
+    bar.classList.add("bar");
+  
+    // Provide height to the bar
+    bar.style.height = `${value * 3}px`;
+      
+    // Translate the bar towards positive X axis
+    bar.style.transform = `translateX(${i * 30}px)`;
+  
+    // To create element "label"
+    const barLabel = document.createElement("label");
+  
+    // To add class "bar_id" to "label"
+    barLabel.classList.add("bar__id");
+  
+    // Assign value to "label"
+    barLabel.innerHTML = value;
+	barLabel.style.color="white";
+  
+    // Append "Label" to "div"
+    bar.appendChild(barLabel);
+  
+    // Append "div" to "data-container div"
+    container.appendChild(bar);
+  }
+}
+
+async function CombSort(delay = 1000) {
+
+let bars = document.querySelectorAll(".bar");
+
+var pos = 0;
+
+while (pos < list.length) {
+    if (pos == 0) {
+        pos++;
+    }
+
+
+    var value1 = parseInt(bars[pos].childNodes[0].innerHTML);
+    bars[pos].style.backgroundColor = "green";
+
+
+    var value2 = parseInt(bars[pos - 1].childNodes[0].innerHTML);
+    bars[pos - 1].style.backgroundColor = "green";
+
+
+    if (value1 >= value2) {
+        pos++;
+    } else {
+
+
+        bars[pos].style.backgroundColor = "red";
+
+
+        bars[pos - 1].style.backgroundColor = "red";
+
+
+        var temp1 = bars[pos].style.height;
+        var temp2 = bars[pos].childNodes[0].innerText;
+
+        
+        await new Promise((resolve) =>
+            setTimeout(() => {
+                resolve();
+            }, 700)
+        );
+
+        
+        bars[pos].style.height = bars[pos - 1].style.height;
+        bars[pos].childNodes[0].innerText =
+            bars[pos - 1].childNodes[0].innerText;
+        bars[pos - 1].style.height = temp1;
+        bars[pos - 1].childNodes[0].innerText = temp2;
+        pos--;
+    }
+
+    
+    await new Promise((resolve) =>
+        setTimeout(() => {
+            resolve();
+        }, 700)
+    );
+
+    for (var x = 0; x < list.length; x++) {
+        bars[x].style.backgroundColor = "rgb(0, 183, 255)";
+    }
+}
+
+
+for (var x = 0; x < list.length; x++) {
+    bars[x].style.backgroundColor = "rgb(49, 226, 13)";
+}
+
+
+document.getElementById("Button1").disabled = false;
+document.getElementById("Button1").style.backgroundColor = "#6f459e";
+
+
+document.getElementById("Button2").disabled = false;
+document.getElementById("Button2").style.backgroundColor = "#6f459e";
+}
+
+
+    // for(var i=0; i<str.length;i++){
+    //     var ch = str.charAt(i);
+    //     var dh=" ";
+    //     if(ch!=','){
+    //         dh= dh+ch;
+
+           
+    //     }
+    //     else{
+    //         dh= dh.trim();
+    //         console.log(typeof dh);
+    //         // console.log(j);
+    //         arr[j]= parseInt(dh);
+    //         console.log(arr[j]);
+             
+    //         console.log(typeof arr[j]);
+    //         j++;
+    //         dh=" ";
+    //     }
+    // }
+
+    // document.getElementById("tut").innerHTML=arr;
+   
+    
+
+
+</script>
+    
+</body>
+</html>

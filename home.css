@@ -1,0 +1,104 @@
+.mySlides {
+    display: none;
+}
+
+body {
+    background: linear-gradient(60deg, #199eb3, #8627a8);
+    
+    font-family: Verdana, sans-serif;
+    height: 98vh;
+    
+}
+
+
+.head {
+    margin-top: 20px;
+    margin-right: 30vw;
+    margin-left: 30vw;
+    text-align: center;
+    font-size: 30px;
+    background:-webkit-linear-gradient(#34eb8c,#3480eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: white;
+    
+    border-radius: 10px;
+    font-weight: bolder;
+}
+
+.data-container {
+    top: 30px;
+    width: 600px;
+    height: 364px;
+    position: relative;
+    margin:0 auto;
+     margin-left: 27%;
+     margin-right: 20%; 
+    border: 1px solid white ;
+    border-radius: 10px;
+    padding:2px;
+   
+    
+}
+
+.bar {
+    width: 28px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-top-left-radius:5px;
+    border-top-right-radius: 5px;
+    background-color: rgb(0, 183, 255);
+    transition: 0.2s all ease;
+}
+
+.bar__id {
+    position: absolute;
+    top: -24px;
+    width: 100%;
+    text-align: center;
+}
+
+.btn1 {
+    padding: 12px;
+    font-weight: bolder;
+    cursor: pointer;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    border: white;
+    margin-top: 1vw;
+    margin-right: 1vw;
+    background:-webkit-linear-gradient(#34eb8c,#3480eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 1px solid white;
+}
+
+.btn2 {
+    padding: 12px;
+    font-weight: bolder;
+    cursor: pointer;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    border: white;
+    background:-webkit-linear-gradient(#34eb8c,#3480eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 1px solid white;
+}
+.btn3{
+    padding: 12px;
+    font-weight: bolder;
+    background-color: #6f459e;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    border: white;
+    cursor:pointer;
+}
+#ele {
+    text-align: center;
+    height: 35px;
+}
